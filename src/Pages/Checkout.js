@@ -21,14 +21,14 @@ const Checkout = ({history}) => {
     const { user, cod} = useSelector((state) => ({...state}));
     const couponTrueOrFalse = useSelector((state) => state.coupon);
     useEffect(() => {
-        getUserCart(user.token)
+        getUserCart(user?.token)
             .then(res =>{
                 //console.log("user Cart res", res.data)
                 setProducts(res.data.products);
                 setTotal(res.data.cartTotal);
             })
 
-        if(user.token === undefined) return <h1>Loading...</h1>
+        if(user?.token === undefined) return <h1>Loading...</h1>
     }, [])
 
     const saveAddressToDB = () =>{
@@ -121,7 +121,7 @@ const Checkout = ({history}) => {
 
     const showApplyCoupon = () => (
         <>
-            <label>Enter Coupon</label>
+            <label>Enter Coupon(PROMO555, SMILE123, WINTER2021, SUMMER2021)</label>
             <input 
                 type="text"
                 className="form-control col-md-6"
