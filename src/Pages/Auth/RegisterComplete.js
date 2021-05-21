@@ -4,12 +4,14 @@ import { toast } from 'react-toastify';
 import { useDispatch, useSelector} from "react-redux";
 import {createOrUpdateUser} from "../../functions/auth";
 import { Button } from 'antd';
+import Loader from '../../components/Loader';
 
 const RegisterComplete = ({history}) => {
     let dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState(""); //eslint-disable-next-line 
-    const {user} = useSelector((state) => ({...state})); 
+    const {user} = useSelector((state) => ({...state}));
+    const [loading, setLoading] = useState(false); 
 
     useEffect(() => {
         setEmail(window.localStorage.getItem("emailForRegistration"));
@@ -87,7 +89,8 @@ const RegisterComplete = ({history}) => {
         <div className="container p-5">
             <div className="row">
                 <div className="col-md-6 offset-md-3">
-                    <h4 className="text-center">Register</h4>
+                {loading ? (<Loader className="text-center" /> ) : (
+                <h4 className="text-center">Register Complete</h4> )}
                     
                     {completeResgisterForm()}
                 </div>

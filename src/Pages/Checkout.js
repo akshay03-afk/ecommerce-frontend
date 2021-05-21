@@ -27,8 +27,6 @@ const Checkout = ({history}) => {
                 setProducts(res.data.products);
                 setTotal(res.data.cartTotal);
             })
-
-        if(user?.token === undefined) return <h1>Loading...</h1>
     }, [])
 
     const saveAddressToDB = () =>{
@@ -89,7 +87,7 @@ const Checkout = ({history}) => {
     const showProductSummary = () =>{
         return products.map((p,i) =>(
             <div key={i}>
-                <p>{p.product.title}({p.color}) x <b>{p.count}</b>= {" "} <b>${p.product.price * p.count}</b></p>
+                <p>{p.product?.title}({p.color}) x <b>{p.count}</b>= {" "} <b>${p.product?.price * p.count}</b></p>
             </div>
         ))
     }
@@ -168,7 +166,7 @@ const Checkout = ({history}) => {
                     payload: []
                 })
                 //empty cart from backend
-                emptyUserCart(user.token);
+                emptyUserCart(user?.token);
                 //redirect
                 setTimeout(() =>{
                     history.push("/user/history")

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getSubCategories } from "../../functions/subCategory";
+import Loader from "../Loader";
 
 const SubCategoryList = () => {
   const [subCategories, setSubCategories] = useState([]);
@@ -28,7 +29,7 @@ const SubCategoryList = () => {
     <div className="container">
       <div className="row">
         {loading ? (
-          <h4 className="text-center">Loading...</h4>
+          <Loader />
         ) : (
           showSubCategories()
         )}

@@ -58,7 +58,7 @@ const AllProduct = () => {
                     {loading ? <Loader className="text-center"/>  : <h4 className="display-4 mt-2 mb-3 text-center">All Products</h4>}
                        <hr />
                         <div className="row">
-                        {products.map((product)=>(
+                        {products?.map((product)=>(
                             <div className="col-md-6 col-lg-4" key={product._id}>
                                 <AdminProductCard product={product} handleRemove={handleRemove} />
 

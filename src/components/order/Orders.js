@@ -23,7 +23,7 @@ const Orders = ({orders, handleStatusChange}) => {
                 <td>
                   <b>{p.product?.title}</b>
                 </td>
-                <td>{p.product?.price}</td>
+                <td>${p.product?.price}</td>
                 <td>{p.product?.brand}</td>
                 <td>{p.color}</td>
                 <td>{p.count}</td>
@@ -42,7 +42,7 @@ const Orders = ({orders, handleStatusChange}) => {
     
     return (
         <>
-        {orders.map((order) =>(
+        {orders?.map((order) =>(
             <div key={orders._id} className="row pb-5">
                 <div className="btn btn-block bg-light">
                     <ShowPaymentInfo order={order} />

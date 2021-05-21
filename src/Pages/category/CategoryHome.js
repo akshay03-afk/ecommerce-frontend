@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { getCategory } from "../../functions/category";
 import ProductCard from "../../components/cards/ProductCard";
-import CategoryList from "../../components/category/CategoryList";
 
 
 const CategoryHome = ({match}) => {

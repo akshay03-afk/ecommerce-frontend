@@ -113,7 +113,7 @@ const ProductUpdateForm = ({handleSubmit, selectedCategory, handleChange, handle
                             name="category" 
                             className="form-control" 
                             onChange={handleCategoryChange}
-                            value={selectedCategory ? selectedCategory : category._id}
+                            value={selectedCategory ? selectedCategory : category?._id}
                         >
                             <option>Please select</option>
                                {categories.length > 0 && categories.map((c) => (

@@ -26,3 +26,10 @@ html {
 .row .new-arrival {
   margin-top: -100px !important;
 }
+h5 > .rating-modal {
+  margin-top: -35px !important;
+}
+
+.carausel-status {
+  visibility: hidden;
+}

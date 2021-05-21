@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { auth } from "../../firebase";
 import { toast } from 'react-toastify';
 import { useSelector } from "react-redux";
+import Loader from '../../components/Loader';
+import { Button } from 'antd';
 
 const ForgotPassword = ({history}) => {
 
@@ -34,8 +36,8 @@ const ForgotPassword = ({history}) => {
     }
     return (
         <div className="container col-md-6 offset-md-3 p-5"> 
-            {loading ? (<h4 className="text-danger">Loading...</h4> ) : (
-                <h4 className="text-center">Login</h4>
+            {loading ? (<Loader className="text-center" /> ) : (
+                <h4 className="text-center">Forgot Password?</h4>
             )}
 
             <form onSubmit={handleSubmit}>
@@ -47,9 +49,14 @@ const ForgotPassword = ({history}) => {
                     onChange={(e) => setEmail(e.target.value)}  
                     autoFocus
                     />
-                    <button 
-                        className="btn btn-raised mt-3"
-                        disabled={!email}>Submit</button>
+                    <Button
+                        onClick={handleSubmit}
+                        className="mt-3"
+                        type="primary"
+                        block
+                        shape="round"
+                        size="large"
+                        disabled={!email}>Submit</Button>
             </form>
         </div>
     )

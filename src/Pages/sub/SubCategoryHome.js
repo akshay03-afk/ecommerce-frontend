@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { getSubCategory } from "../../functions/subCategory";
 import ProductCard from "../../components/cards/ProductCard";
+import Loader from '../../components/Loader';
 
 
 
@@ -26,7 +27,7 @@ const SubCategoryHome = ({match}) => {
             <div className="row">
                 <div className="col">
                     {loading ? (
-                        <h4 className=" text-center jumbotron mt-5 mb-5 display-4 p-2">Loading...</h4>
+                        <Loader />
                     ) : (
                         <h4 className=" text-center jumbotron mt-5 mb-5 display-4 p-2">{products.length} Products in "{sub.name}" Sub Category</h4>
                     )}

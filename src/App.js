@@ -27,7 +27,7 @@ const SubUpdate = lazy(() => import("./Pages/admin/subCategory/SubUpdate")) ;
 const ProductCreate = lazy(() => import("./Pages/admin/product/ProductCreate")) ;
 const AllProduct = lazy(() => import("./Pages/admin/product/AllProduct")) ;
 const ProductUpdate = lazy(() => import("./Pages/admin/product/ProductUpdate")) ;
-const  Product = lazy(() => import("./Pages/Product")) ;
+const Product = lazy(() => import("./Pages/Product")) ;
 const CategoryHome = lazy(() => import("./Pages/category/CategoryHome"));
 const SubCategoryHome = lazy(() => import("./Pages/sub/SubCategoryHome"));
 const Shop = lazy(() => import("./Pages/Shop"));

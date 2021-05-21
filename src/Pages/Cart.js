@@ -3,12 +3,12 @@ import { useDispatch, useSelector} from "react-redux";
 import { Link } from "react-router-dom";
 import ProductCartInCheckOut from "../components/cards/ProductCartInCheckOut";
 import { userCart } from "../functions/user";
-import { Button } from "antd"
+import { Button } from "antd";
 
 const Cart = ({history}) => {
     const { user, cart} = useSelector((state) => ({...state}));
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState(false)
+   
 
     const getTotal = () =>{
         return cart.reduce((currentValue, nextValue) =>{
@@ -67,7 +67,6 @@ const Cart = ({history}) => {
         </table>
     )
     return (
-    
             <div className="container-fluid pt-2">
             <div className="row">
                 <h4 className="pl-3">Cart/ {cart.length} Products</h4>
@@ -147,6 +146,7 @@ const Cart = ({history}) => {
             
         </div>
         
+              
     )
 }
 

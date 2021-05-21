@@ -82,9 +82,9 @@ const SingleProduct = ({product, onStarClick, star}) => {
                 </Carousel>
                 {product && product.rating && product.rating.length > 0 ?
                       (
-                          <h5>Ratings: {showAverage(product)}</h5>
+                          <h5 className="rating-model">Ratings: {showAverage(product)}</h5>
                       )  :
-                           <h5>Ratings: No ratings Yet!!</h5>
+                           <h5 className="rating-model">Ratings: No ratings Yet!!</h5>
                     }               
           </div>
           <div className="col-md-5">

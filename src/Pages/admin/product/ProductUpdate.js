@@ -76,7 +76,7 @@ const ProductUpdate = ({match, history}) => {
             //load single product
             setValues({...values, ...p.data})
             //load single product category subs
-            getCategorySubs(p.data.category._id)
+            getCategorySubs(p.data.category?._id)
             .then((res) =>{
                 setSubOptions(res.data)//first load default sub
             })
@@ -127,7 +127,7 @@ const ProductUpdate = ({match, history}) => {
         });
         //if user clicks back to the original category
         //show ist sub category in default
-        if(values.category._id === e.target.value){
+        if(values.category?._id === e.target.value){
             loadProduct();
         }
         setArrayOfSubs([]);

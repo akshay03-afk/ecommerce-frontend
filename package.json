@@ -1,7 +1,9 @@
 {
   "name": "client",
+  "proxy": "http://localhost:8000",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/",  
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@david.kucsai/react-pdf-table": "^0.3.0",

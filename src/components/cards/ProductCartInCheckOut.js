@@ -88,7 +88,7 @@ const ProductCartInCheckOut = ({p}) => {
                     </div>
                 </td>
                 <td>{p.title}</td>
-                <td>{p.price}</td>
+                <td>${p.price}</td>
                 <td>{p.brand}</td>
                 <td>
                     <select

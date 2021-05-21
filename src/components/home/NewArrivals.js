@@ -54,7 +54,7 @@ const NewArrivals = () => {
         <nav className="col-md-4 offset-md-4 text-center pt-5 p-3">
           <Pagination
             current={page}
-            total={(productsCount / 5) * 10}
+            total={(productsCount / 6) * 10}
             onChange={(value) => setPage(value)}
           />
         </nav>

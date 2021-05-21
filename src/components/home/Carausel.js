@@ -4,7 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 
 const Carausel = () => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState();
+
     useEffect(() => {
         getProductsByCount()
         .then(res =>{
@@ -13,19 +14,20 @@ const Carausel = () => {
         })    
     }, [])
     return (
+        
         <Carousel showArrows={true} autoPlay infiniteLoop className="mt-2">
-            {products.map((product) =>(
-                <div key={product._id}>
+            {products && products.map((p) =>(
+                <div key={p?._id}>
                     <img src={
-                        product.images[0].url
+                        p?.images[0].url
                     }
                     alt="" />
-                    <p className="bg-secondary legend info">{product.title}</p>
                 </div>
             ))}   
         </Carousel>
+    
 
     )
 }
 
-export default Carausel
+export default Carausel;
